@@ -1,4 +1,11 @@
 package net.hexacell.emberweald
 
-fun sayHello(to: String): String =
-    "Hello, $to!"
+import kotlin.uuid.Uuid
+
+data class GameRunId(val value: Uuid) {
+    override fun toString() = value.toString()
+
+    companion object {
+        fun generate() = GameRunId(Uuid.random())
+    }
+}

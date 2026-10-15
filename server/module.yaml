@@ -4,12 +4,20 @@ dependencies:
   - //core
   - $ktor.server.core
   - $ktor.server.netty
+  - $ktor.server.contentNegotiation
+  - $ktor.server.cors
+  - $ktor.serialization.kotlinx.json
   - $libs.logback.classic
 
 settings:
   ktor: enabled
+  kotlin:
+    serialization:
+      enabled: true
   jvm:
     mainClass: net.hexacell.emberweald.server.ApplicationKt
 
 test-dependencies:
   - $ktor.server.testHost
+  - $ktor.client.contentNegotiation
+  - $ktor.serialization.kotlinx.json

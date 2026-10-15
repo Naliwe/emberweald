@@ -1,34 +1,44 @@
-# Kotlin Multiplatform project
+# Emberweald
 
-This project is targeting Desktop (JVM), Web, and Server, built with
-the [Kotlin Toolchain](https://kotlin-toolchain.org/latest/).
+Companion for organizing persistent multiplayer game runs. See [DESIGN.md](./docs/DESIGN.md) for product scope and architecture.
 
-- [/app/desktopApp](./app/desktopApp) contains the desktop (JVM) application.
-- [/app/shared](./app/shared) holds the code shared across your applications — Compose UI,
-  business logic, and platform-specific implementations. [src](./app/shared/src) is for common code; the
-  sibling `src@<platform>` folders (for example `src@jvm`) hold code compiled only for the platform named in the
-  folder.
-- [/app/webApp](./app/webApp) contains the web application, compiled to WebAssembly with Kotlin/Wasm.
-- [/core](./core) holds the code shared across the project.
-- [/server](./server) contains the Ktor server application.
+## Project structure
 
-The `kotlin` (macOS/Linux) and `kotlin.bat` (Windows) scripts in the project root are self-bootstrapping wrappers for
-the Kotlin Toolchain: they download the pinned toolchain version on first use, so no separate installation is required.
-Build the whole project with `./kotlin build`.
+- [/core](./core) — Shared KMP library (domain and common logic).
+- [/app/shared](./app/shared) — Shared Compose UI and platform-specific implementations.
+- [/app/desktopApp](./app/desktopApp) — Desktop (JVM) application.
+- [/app/webApp](./app/webApp) — Web application compiled to WebAssembly.
+- [/server](./server) — Ktor backend application.
 
-### Running
+## Prerequisites
 
-Run each module from the command line:
+- No separate Kotlin installation required — the Kotlin Toolchain bootstraps automatically.
+- For the server: **PostgreSQL**.
 
-- Desktop app: `./kotlin run -m desktopApp`
-- Web app: `./kotlin run -m webApp`
-- Server: `./kotlin run -m server`
+## Build and run
 
-### Testing
+Build the entire project:
 
-Run the project's tests with `./kotlin test`, or `./kotlin test -m <module>` for a single module.
+```bash
+./kotlin build
+```
 
----
+Run individual modules:
 
-Learn more
-about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html), [Kotlin Toolchain](https://kotlin-toolchain.org/latest/), [Compose Multiplatform](https://kotlinlang.org/compose-multiplatform/), [Kotlin/Wasm](https://kotl.in/wasm/), [Ktor](https://ktor.io/).
+```bash
+./kotlin run -m desktopApp
+./kotlin run -m webApp
+./kotlin run -m server
+```
+
+Run all tests, or test a single module:
+
+```bash
+./kotlin test
+./kotlin test -m <module>
+```
+
+## Contributing
+
+- Guidelines for contributors: [CONTRIBUTING.md](./CONTRIBUTING.md).
+- Product decisions and roadmap: [DESIGN.md](./docs/DESIGN.md).

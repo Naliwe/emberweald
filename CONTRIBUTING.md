@@ -48,7 +48,8 @@
 
 ## Integrations
 
-- Pelican remains responsible for game-server infrastructure. Integrate through its APIs; do not couple to its internals.
+- Pelican remains responsible for game-server infrastructure. Integrate through its APIs; do not couple to its
+  internals.
 - Knitty remains responsible for mod management. Reuse its existing capabilities; do not reimplement its engine.
 - Keep credentials server-side or in appropriately secured local stores.
 - Model long-running and destructive operations as explicit jobs with progress, authorization, and cancellation support.

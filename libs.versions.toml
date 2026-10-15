@@ -1,7 +1,13 @@
 [versions]
 logback = "1.6.2"
 kotlinx-coroutines = "1.11.0"
+ktor-client = "3.6.0"
 
 [libraries]
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor-client" }
+ktor-client-contentNegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor-client" }
+ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktor-client" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor-client" }
+ktor-serialization-kotlinxJson = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor-client" }

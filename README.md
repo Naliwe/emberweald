@@ -1,6 +1,7 @@
 # Emberweald
 
-Companion for organizing persistent multiplayer game runs. See [DESIGN.md](./docs/DESIGN.md) for product scope and architecture.
+Companion for organizing persistent multiplayer game runs. See [DESIGN.md](./docs/DESIGN.md) for product scope and
+architecture.
 
 ## Project structure
 

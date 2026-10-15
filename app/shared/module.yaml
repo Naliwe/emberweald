@@ -11,6 +11,9 @@ dependencies:
   - $compose.components.resources
   - $compose.preview
   - $compose.hotReload.runtimeApi
+  - $libs.ktor.client.core
+  - $libs.ktor.client.contentNegotiation
+  - $libs.ktor.serialization.kotlinxJson
 
 settings:
   compose:
@@ -19,3 +22,12 @@ settings:
       packageName: net.hexacell.emberweald.resources
       # Generate public accessors so other modules (and previews) can use Res.*
       exposedAccessors: true
+  kotlin:
+    serialization:
+      enabled: true
+
+dependencies@jvm:
+  - $libs.ktor.client.cio
+
+dependencies@wasmJs:
+  - $libs.ktor.client.js
